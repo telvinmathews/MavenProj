@@ -11,10 +11,12 @@ public class Main {
     }
 
     public static String takeUserInput() {
+//        String quotes = ""; <<< needs to be surrounded in quotes.
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
         return userInput;
     }
+
     private static void checkUserInput(String userInput) {
         if (!StringUtils.isNumeric(userInput)) {
             System.out.println(userInput + " is not a number");
@@ -22,6 +24,7 @@ public class Main {
             System.out.println(userInput + " is a number");
         }
     }
+
     private static void reverseUserInput(String userInput) {
         String reverse = StringUtils.reverse(userInput);
         System.out.println("Reversed: " + reverse);
@@ -35,15 +38,12 @@ public class Main {
     public static void main(String[] args) {
         promptUser();
         String result = takeUserInput();
-        String quotes = "";
-        System.out.printf("You Entered: "+ "%s", result);
+        System.out.printf("You Entered: "+ "%s", result); //Quotes did not work here for result
         System.out.println();
         checkUserInput(result);
         flipCase(result);
         reverseUserInput(result);
     }
-
-
 
 
 }
